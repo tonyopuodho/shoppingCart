@@ -95,9 +95,15 @@ li{
     margin-left: 10px;
 }
 .menu-bar{
-  position: absolute;
+  position: relative;
   left: 1px;
   display: none;    
+}
+.menu{
+    display: flex;
+}
+.menu.info{
+    font-size: 20px;
 }
 .product-container{
     width: 100%;
