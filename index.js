@@ -3,6 +3,8 @@ const openButton = document.querySelector(".open-btn")
 const mobileNavigation = document.querySelector(".mobile-navigation")
 const productContainer = document.querySelector(".product-container")
 const alertElement = document.querySelector(".alert")
+const backetInfoElement = document.querySelector(".basketInfo")
+const basketItems = document.getElementById("info")
 
 openButton.addEventListener('click',() => {
     mobileNavigation.classList.add("active")
@@ -43,7 +45,7 @@ function productDetails(products) {
             </div>
         `
     })
-  
+    
 }
 /**
  * 
@@ -53,6 +55,7 @@ function productDetails(products) {
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 
 function addItem(id){
+    
     alertElement.classList.add("active")
     setTimeout(() => {
         alertElement.classList.remove("active")
@@ -60,8 +63,18 @@ function addItem(id){
     cart.push({
         id: id
     })
-
+   
     localStorage.setItem("cart",JSON.stringify(cart))
+    displayItemsInCart()
 }
 
+function displayItemsInCart() {
+    if (cart.length === 0) {
+        basketItems.innerHTML = ""
+    } else {
+        basketItems.innerHTML = cart.length
+    }  
+}
+
+displayItemsInCart()
 displayProducts()

@@ -24,9 +24,24 @@ body{
     margin-bottom: 10px;
 }
 .nav-links{
+    position: relative;
     margin-right: 5%;
     text-align: center;
     display: block;
+}
+.basketInfo{
+    position: relative;
+    top: -36px;
+    right: 14px;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;    
+}
+.info{
+    font-size: 10px;
+    font-weight: bold;
 }
 ul{
     display: flex;
