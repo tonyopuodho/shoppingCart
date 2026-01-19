@@ -5,6 +5,7 @@ const productContainer = document.querySelector(".product-container")
 const alertElement = document.querySelector(".alert")
 const backetInfoElement = document.querySelector(".basketInfo")
 const basketItems = document.getElementById("info")
+const screenItems = document.getElementById("infoo")
 
 openButton.addEventListener('click',() => {
     mobileNavigation.classList.add("active")
@@ -71,8 +72,10 @@ function addItem(id){
 function displayItemsInCart() {
     if (cart.length === 0) {
         basketItems.innerHTML = ""
+        screenItems.innerHTML = ""
     } else {
         basketItems.innerHTML = cart.length
+        screenItems.innerHTML = cart.length
     }  
 }
 

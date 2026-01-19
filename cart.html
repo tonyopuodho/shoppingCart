@@ -22,7 +22,7 @@
         </div>        
         <div class="nav-links">
             <ul>
-                <li><i class="fa-sharp fa-solid fa-house"></i> Home</li>
+                <li><a href="index.html"><i class="fa-sharp fa-solid fa-house"></i> Home</a></li>
                 <li> <a href="cart.html"><i class="fa-solid fa-cart-arrow-down"></i> Cart</a></li>
                 <li><i class="fa-solid fa-user"></i> Account</li>
             </ul>
@@ -31,14 +31,40 @@
             </div>
         </div>
     </nav>
-    <!-- Alert message-->
-     <div class="alert">
-        <h3>Item added successfully</h3>
+    <!-- cart details-->
+     <div class="cart-container">
+        <div class="cart-detail">
+            <h3>Cart</h3>
+            <hr>
+            <div class="cart-contain">
+               <div class="cart-info">
+                  <img src="Untitled.png" alt="">
+                  <div class="bin">
+                    <i class="fa-solid fa-trash" title="Remove"></i>
+                  </div>
+                  
+                  <div class="product-info">
+                    <h4>Product Name</h4>
+                    <h2>Ksh 1000</h2>
+                 </div>
+                <div class="button-info">
+                    <span><button id="decrement">-</button> <span id="counter">0</span> <button id="increment">+</button>   </span>
+                </div>                
+                </div>
+                
+            </div>           
+        </div>
+        <div class="cart-summary">
+            <h2>Cart summary</h2>
+            <hr>
+            <div class="sub-total">
+                <h3>Sub total</h3>
+                <span id="total">10000</span>
+            </div>
+            <button id="check-out">Check out</button>
+        </div>
      </div>
-    <!-- displaying products from an api call-->
-    <div class="product-container"></div>
-    
-    <!-- Mobile navigation -->
+     <!-- Mobile navigation -->
     <div class="mobile-navigation">
         <i class="fa-solid fa-xmark close-btn"></i>
         <div class="mobile-links">
@@ -47,9 +73,6 @@
                 <li><i class="fa-solid fa-user"></i> Account</li>
             </ul>
     </div>
-    
-    
-    
     <script src="index.js"></script>
 </body>
 </html>
