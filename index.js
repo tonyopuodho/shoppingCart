@@ -27,7 +27,7 @@ let displayProducts = () => {
         const products = data.products
         productDetails(products)
     })
-    .catch(error => console.log(error))
+    .catch((error) => console.log(error))
 }
 
 function productDetails(products) {
