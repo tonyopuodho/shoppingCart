@@ -1,4 +1,4 @@
-gitconst cartElement = document.querySelector(".cart-contain")
+const cartElement = document.querySelector(".cart-contain")
 
 let products = []
 const basket = JSON.parse(localStorage.getItem("cart"))
