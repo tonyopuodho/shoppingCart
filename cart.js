@@ -1,7 +1,7 @@
 const cartElement = document.querySelector(".cart-contain")
 
 let products = []
-const basket = JSON.parse(localStorage.getItem("cart"))
+let basket = JSON.parse(localStorage.getItem("cart"))
 
 async function fetchItemsOnServer(){
     const response = await fetch('https://dummyjson.com/products',{method:"GET"})
@@ -20,7 +20,7 @@ function displayItemsOnCart(product){
                 <div class="cart-info">
                     <img src=${searchItems.images} alt="">
                     <div class="bin">
-                        <i class="fa-solid fa-trash" title="Remove"></i>
+                        <i class="fa-solid fa-trash" title="Remove" onclick="removeItem(${id})"></i>
                     </div>
                     
                     <div class="product-info">
@@ -37,6 +37,13 @@ function displayItemsOnCart(product){
     } else {
         return cartElement.innerHTML = `<h1>Cart is empty</h1>`
     }
+}
+
+function removeItem(id){
+   let selectedItem = id
+   basket = basket.filter((x) => x.id !== selectedItem)
+   localStorage.setItem("cart",JSON.stringify(basket))
+   fetchItemsOnServer()
 }
 
 fetchItemsOnServer()
